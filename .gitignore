@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Data
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Env / secrets
+.env
+configs/*.key
+configs/secrets.yaml
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
