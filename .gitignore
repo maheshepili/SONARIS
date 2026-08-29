@@ -9,6 +9,12 @@ data/raw/*
 data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
+reports/*.json
+reports/predictions/
+reports/training/
+*.pt
+*.pth
+*.onnx
 
 # Env / secrets
 .env

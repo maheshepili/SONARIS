@@ -1,0 +1,8 @@
+# Phase-1 detector configuration. Raw data is never modified.
+model: yolo11n.pt
+epochs: 30
+imgsz: 640
+batch: 4
+seed: 42
+prepared_data: data/processed/sonaris_detection/data.yaml
+project: reports/training
