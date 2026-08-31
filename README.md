@@ -5,6 +5,24 @@ SubPipeMiniSSS side-scan sonar imagery. It does not classify marine debris.
 Potentially unusual detections receive a transparent, heuristic review score;
 they are not confirmed anomalies or debris.
 
+## FLM-MLDT debris dataset (validation only; no training)
+
+The external FLM-MLDT download is never changed. Validate it first:
+
+```powershell
+python -m src.data.flm_mldt validate
+python -m src.data.visualize_flm_mldt
+```
+
+This creates `reports/flm_mldt_validation.json` and boxed samples. The report
+currently documents an unresolved class ID 11. A build therefore fails by
+default. Once the team approves excluding whole affected sequences (never
+remapping their labels), build an isolated derived dataset with:
+
+```powershell
+python -m src.data.flm_mldt build --unknown-policy exclude-sequences
+```
+
 ## Commands
 
 Create a project-local virtual environment with Python 3.11 or 3.12, then:
