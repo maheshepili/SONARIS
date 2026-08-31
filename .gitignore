@@ -26,3 +26,6 @@ configs/secrets.yaml
 
 # OS
 .DS_Store
+
+runs/
+reports/flm_mldt_samples/
