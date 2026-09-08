@@ -14,6 +14,7 @@ from torch import nn
 from torch.utils.data import DataLoader, Dataset
 
 from src.anomaly.autoencoder import SonarAutoencoder
+from src.data.preprocess import preprocess_sonar_image
 
 
 class SonarBackgroundPatches(Dataset):
@@ -57,7 +58,8 @@ class SonarBackgroundPatches(Dataset):
         image_path = self.images[index // self.patches_per_image]
         rng = random.Random(self.seed + index)
         with Image.open(image_path) as source:
-            image = source.convert("L")
+            # Keep anomaly training consistent with the production sonar preprocessing.
+            image = preprocess_sonar_image(source).convert("L")
             width, height = image.size
             if width < self.patch_size or height < self.patch_size:
                 image = image.resize((max(width, self.patch_size), max(height, self.patch_size)), Image.Resampling.BILINEAR)
