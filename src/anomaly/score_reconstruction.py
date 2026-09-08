@@ -11,6 +11,7 @@ import torch
 from PIL import Image
 
 from src.anomaly.autoencoder import SonarAutoencoder, reconstruction_error
+from src.data.preprocess import preprocess_sonar_image
 
 
 def load_model(checkpoint: Path, device: torch.device) -> tuple[SonarAutoencoder, int]:
@@ -25,7 +26,7 @@ def score_image(image_path: Path, checkpoint: Path, threshold: float | None = No
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model, patch_size = load_model(checkpoint, device)
     with Image.open(image_path) as source:
-        image = source.convert("L")
+        image = preprocess_sonar_image(source).convert("L")
     array = np.asarray(image, dtype=np.float32) / 255.0
     height, width = array.shape
     scores: list[float] = []
