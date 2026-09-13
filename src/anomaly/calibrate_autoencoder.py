@@ -4,23 +4,65 @@ from __future__ import annotations
 
 import argparse
 import json
+import random
 from pathlib import Path
 
 import numpy as np
 import torch
-from torch.utils.data import DataLoader
+from PIL import Image
 
 from src.anomaly.autoencoder import SonarAutoencoder, reconstruction_error
+from src.anomaly.score_reconstruction import load_model
 from src.anomaly.train_autoencoder import SonarBackgroundPatches
+from src.data.preprocess import preprocess_sonar_image
 
 
 def collect_errors(model: SonarAutoencoder, dataset: SonarBackgroundPatches, batch_size: int, device: torch.device) -> np.ndarray:
-    loader = DataLoader(dataset, batch_size=batch_size, shuffle=False, num_workers=0)
+    """Collect reconstruction errors efficiently, preprocessing each image only once."""
     model.eval()
-    chunks: list[np.ndarray] = []
-    for batch in loader:
-        chunks.append(reconstruction_error(model, batch.to(device)).cpu().numpy())
-    return np.concatenate(chunks)
+    all_errors: list[np.ndarray] = []
+    patch_size = dataset.patch_size
+
+    with torch.no_grad():
+        for image_index, image_path in enumerate(dataset.images):
+            with Image.open(image_path) as source:
+                image = preprocess_sonar_image(source).convert("L")
+            width, height = image.size
+            if width < patch_size or height < patch_size:
+                image = image.resize((max(width, patch_size), max(height, patch_size)), Image.Resampling.BILINEAR)
+                width, height = image.size
+
+            boxes = dataset._boxes(dataset.labels_dir / f"{image_path.stem}.txt", width, height)
+            max_x, max_y = width - patch_size, height - patch_size
+            patches: list[torch.Tensor] = []
+
+            for patch_number in range(dataset.patches_per_image):
+                index = image_index * dataset.patches_per_image + patch_number
+                rng = random.Random(dataset.seed + index)
+                chosen = None
+                for _ in range(40):
+                    x = rng.randint(0, max_x)
+                    y = rng.randint(0, max_y)
+                    candidate = (x, y, x + patch_size, y + patch_size)
+                    if not any(dataset._overlap(candidate, box) for box in boxes):
+                        chosen = candidate
+                        break
+                if chosen is None:
+                    x = rng.randint(0, max_x)
+                    y = rng.randint(0, max_y)
+                    chosen = (x, y, x + patch_size, y + patch_size)
+
+                patch = image.crop(chosen)
+                array = np.asarray(patch, dtype=np.float32) / 255.0
+                patches.append(torch.from_numpy(array).unsqueeze(0))
+
+            for start in range(0, len(patches), batch_size):
+                batch = torch.stack(patches[start:start + batch_size]).to(device)
+                all_errors.append(reconstruction_error(model, batch).cpu().numpy())
+
+    if not all_errors:
+        raise ValueError("No calibration patches were generated.")
+    return np.concatenate(all_errors)
 
 
 def calibrate(args: argparse.Namespace) -> dict[str, float | int | str]:
@@ -32,8 +74,11 @@ def calibrate(args: argparse.Namespace) -> dict[str, float | int | str]:
 
     train_set = SonarBackgroundPatches(Path(args.train_images), Path(args.train_labels), args.patch_size, args.patches_per_image, args.seed)
     val_set = SonarBackgroundPatches(Path(args.val_images), Path(args.val_labels), args.patch_size, args.patches_per_image, args.seed + 100000)
+    print(f"calibrating on {len(train_set.images)} train images + {len(val_set.images)} validation images using {device}")
     train_errors = collect_errors(model, train_set, args.batch_size, device)
+    print("training errors collected")
     val_errors = collect_errors(model, val_set, args.batch_size, device)
+    print("validation errors collected")
 
     threshold = float(np.percentile(train_errors, args.percentile))
     result = {
