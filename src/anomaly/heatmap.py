@@ -15,6 +15,26 @@ from src.anomaly.score_reconstruction import load_model
 from src.data.preprocess import preprocess_sonar_image
 
 
+def mask_sonar_artifacts(heatmap: np.ndarray) -> np.ndarray:
+    """Suppress known structural sonar artifacts from the anomaly map.
+
+    The outer image borders and narrow nadir/centerline region are not useful
+    anomaly candidates, so they are excluded before reporting hotspots.
+    """
+    masked = heatmap.copy()
+    height, width = masked.shape
+
+    edge = max(1, int(round(width * 0.05)))
+    center_width = max(1, int(round(width * 0.06)))
+    center_start = max(0, (width - center_width) // 2)
+    center_end = min(width, center_start + center_width)
+
+    masked[:, :edge] = 0.0
+    masked[:, width - edge:] = 0.0
+    masked[:, center_start:center_end] = 0.0
+    return masked
+
+
 def anomaly_map(image_path: Path, checkpoint: Path, threshold: float) -> tuple[np.ndarray, np.ndarray]:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model, patch_size = load_model(checkpoint, device)
@@ -38,6 +58,7 @@ def anomaly_map(image_path: Path, checkpoint: Path, threshold: float) -> tuple[n
                 counts[y:y + patch_size, x:x + patch_size] += 1.0
     valid = counts > 0
     heatmap[valid] /= counts[valid]
+    heatmap = mask_sonar_artifacts(heatmap)
     return array, heatmap
 
 
