@@ -29,3 +29,11 @@ configs/secrets.yaml
 
 runs/
 reports/flm_mldt_samples/
+
+# External datasets and generated reports
+data/external/
+reports/anomaly/
+reports/integrated/
+reports/preprocessing_comparison/
+
+candidate_result.txt
