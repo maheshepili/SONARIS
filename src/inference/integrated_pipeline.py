@@ -11,6 +11,7 @@ import argparse
 import json
 from pathlib import Path
 
+from src.anomaly.extract_candidate_regions import extract_candidate_regions
 from src.anomaly.heatmap import save_heatmap
 from src.anomaly.score_reconstruction import score_image
 from src.inference.prioritization import prioritize_evidence
@@ -72,13 +73,22 @@ def run_integrated_pipeline(
     ]
     yolo_confidence = max(pipeline_confidences, default=None)
     anomaly_detected = bool(reconstruction["anomalous"])
+    candidate_regions = (
+        extract_candidate_regions(
+            image_path,
+            anomaly_checkpoint,
+            patch_anomaly_threshold,
+        )
+        if anomaly_detected
+        else []
+    )
     prioritization = prioritize_evidence(
         pipeline_detected=pipeline_detected,
         yolo_confidence=yolo_confidence,
         anomaly_detected=anomaly_detected,
         anomaly_excess_over_threshold=reconstruction["excess_over_threshold"],
         image_anomaly_threshold=image_anomaly_threshold,
-        candidate_regions=None,
+        candidate_regions=candidate_regions,
     )
     payload = {
         "image": str(image_path),
@@ -100,6 +110,7 @@ def run_integrated_pipeline(
             "excess_over_threshold": reconstruction["excess_over_threshold"],
             "heatmap_threshold_type": "PATCH_LEVEL_RECONSTRUCTION_ERROR",
             "heatmap_threshold": patch_anomaly_threshold,
+            "candidate_regions": candidate_regions,
         },
         "outputs": {
             "detection_image": str(detection_image),

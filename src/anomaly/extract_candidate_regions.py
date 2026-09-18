@@ -12,6 +12,8 @@ import numpy as np
 
 DEFAULT_PATCH_THRESHOLD = 0.0038187976460903883
 DEFAULT_MIN_REGION_AREA = 64
+MAX_EDGE_RESIDUAL_WIDTH_RATIO = 0.003
+MIN_EDGE_RESIDUAL_ASPECT_RATIO = 4
 
 
 def _mask_sonar_artifacts(heatmap: np.ndarray) -> np.ndarray:
@@ -64,6 +66,19 @@ def _component_bbox(pixels: np.ndarray) -> list[int]:
     x1, x2 = int(xs.min()), int(xs.max()) + 1
     y1, y2 = int(ys.min()), int(ys.max()) + 1
     return [x1, y1, x2 - x1, y2 - y1]
+
+
+def _is_narrow_edge_residual(bbox: list[int], image_width: int) -> bool:
+    """Return whether a thin vertical component abuts an inner edge mask."""
+    x, _, region_width, region_height = bbox
+    edge = max(1, int(round(image_width * 0.05)))
+    max_width = max(2, int(round(image_width * MAX_EDGE_RESIDUAL_WIDTH_RATIO)))
+    touches_edge_mask = x == edge or x + region_width == image_width - edge
+    return (
+        touches_edge_mask
+        and region_width <= max_width
+        and region_height >= region_width * MIN_EDGE_RESIDUAL_ASPECT_RATIO
+    )
 
 
 def _tightened_component_bbox(pixels: np.ndarray, heatmap: np.ndarray) -> list[int]:
@@ -121,12 +136,15 @@ def regions_from_heatmap(
 
         ys, xs = pixels[:, 0], pixels[:, 1]
         errors = masked_heatmap[ys, xs]
+        bbox = (
+            _tightened_component_bbox(pixels, masked_heatmap)
+            if tighten else _component_bbox(pixels)
+        )
+        if _is_narrow_edge_residual(bbox, heatmap.shape[1]):
+            continue
         regions.append(
             {
-                "bbox": (
-                    _tightened_component_bbox(pixels, masked_heatmap)
-                    if tighten else _component_bbox(pixels)
-                ),
+                "bbox": bbox,
                 "area": area,
                 "max_error": round(float(errors.max()), 8),
                 "mean_error": round(float(errors.mean()), 8),

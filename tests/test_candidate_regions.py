@@ -41,6 +41,31 @@ class CandidateRegionTests(unittest.TestCase):
 
         self.assertEqual(regions, [])
 
+    def test_narrow_regions_abutting_inner_edge_masks_are_excluded(self):
+        heatmap = np.zeros((100, 100), dtype=np.float32)
+        heatmap[20:60, 5:7] = 0.01
+        heatmap[20:60, 93:95] = 0.01
+
+        regions = regions_from_heatmap(
+            heatmap,
+            threshold=0.003,
+            min_region_area=10,
+        )
+
+        self.assertEqual(regions, [])
+
+    def test_narrow_interior_region_is_preserved(self):
+        heatmap = np.zeros((100, 100), dtype=np.float32)
+        heatmap[20:60, 20:22] = 0.01
+
+        regions = regions_from_heatmap(
+            heatmap,
+            threshold=0.003,
+            min_region_area=10,
+        )
+
+        self.assertEqual(regions[0]["bbox"], [20, 20, 2, 40])
+
     def test_regions_tighten_to_the_strongest_anomaly_concentration(self):
         heatmap = np.zeros((100, 100), dtype=np.float32)
         heatmap[20:40, 20:40] = 0.004
