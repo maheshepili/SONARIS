@@ -13,6 +13,7 @@ from pathlib import Path
 
 from src.anomaly.heatmap import save_heatmap
 from src.anomaly.score_reconstruction import score_image
+from src.inference.prioritization import prioritize_evidence
 from src.models.inference import run_inference
 
 
@@ -64,11 +65,28 @@ def run_integrated_pipeline(
 
     detections = detection_payload["detections"]
     pipeline_detected = any(detection["class"] == "Pipeline" for detection in detections)
+    pipeline_confidences = [
+        detection["confidence"]
+        for detection in detections
+        if detection["class"] == "Pipeline" and detection.get("confidence") is not None
+    ]
+    yolo_confidence = max(pipeline_confidences, default=None)
     anomaly_detected = bool(reconstruction["anomalous"])
+    prioritization = prioritize_evidence(
+        pipeline_detected=pipeline_detected,
+        yolo_confidence=yolo_confidence,
+        anomaly_detected=anomaly_detected,
+        anomaly_excess_over_threshold=reconstruction["excess_over_threshold"],
+        image_anomaly_threshold=image_anomaly_threshold,
+        candidate_regions=None,
+    )
     payload = {
         "image": str(image_path),
-        "finding": determine_finding(pipeline_detected, anomaly_detected),
-        "requires_expert_verification": anomaly_detected,
+        "finding": prioritization.finding,
+        "priority": prioritization.priority,
+        "requires_expert_verification": prioritization.requires_expert_verification,
+        "reason": prioritization.reason,
+        "evidence": prioritization.evidence,
         "known_object_detection": {
             "detected": pipeline_detected,
             "detections": detections,
