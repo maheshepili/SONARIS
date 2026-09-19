@@ -4,27 +4,20 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from pathlib import Path
 
-import numpy as np
-import torch
 from PIL import Image
 
-from src.anomaly.autoencoder import SonarAutoencoder, reconstruction_error
-from src.anomaly.heatmap import mask_sonar_artifacts
-from src.anomaly.score_reconstruction import load_model, score_image
-from src.data.preprocess import preprocess_sonar_image
-
-
 CLASS_NAMES = {
-    1: "Pipeline",
-    2: "Shipwreck",
-    3: "Ghost Net",
-    4: "Mine Cylinder",
+    0: "Pipeline",
+    1: "Shipwreck",
+    2: "Ghost Net",
+    3: "Mine Cylinder",
 }
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png"}
-DEFAULT_IMAGES_DIR = Path("data/external/drishti/val/images")
-DEFAULT_LABELS_DIR = Path("data/external/drishti/val/labels")
+DEFAULT_IMAGES_DIR = Path("data/processed/sonaris_multiclass_clean_v2/images/external_validation")
+DEFAULT_LABELS_DIR = Path("data/processed/sonaris_multiclass_clean_v2/labels/external_validation")
 DEFAULT_CHECKPOINT = Path("reports/anomaly/sonar_autoencoder.pt")
 DEFAULT_IMAGE_THRESHOLD = 0.028139928355813026
 
@@ -34,7 +27,9 @@ def load_class_boxes(
     width: int,
     height: int,
 ) -> dict[int, list[tuple[int, int, int, int]]]:
-    """Load valid YOLO boxes grouped by confirmed Drishti class ID."""
+    """Load strict, in-bounds unified-class YOLO boxes grouped by class ID."""
+    if not label_path.is_file():
+        raise ValueError(f"Missing YOLO label: {label_path}")
     boxes = {class_id: [] for class_id in CLASS_NAMES}
 
     for line_number, line in enumerate(
@@ -58,12 +53,31 @@ def load_class_boxes(
                 f"Unknown class ID at {label_path}:{line_number}: {class_id}"
             )
 
-        x1 = max(0, int(round((x_center - box_width / 2) * width)))
-        y1 = max(0, int(round((y_center - box_height / 2) * height)))
-        x2 = min(width, int(round((x_center + box_width / 2) * width)))
-        y2 = min(height, int(round((y_center + box_height / 2) * height)))
-        if x2 > x1 and y2 > y1:
-            boxes[class_id].append((x1, y1, x2, y2))
+        x1 = (x_center - box_width / 2) * width
+        y1 = (y_center - box_height / 2) * height
+        x2 = (x_center + box_width / 2) * width
+        y2 = (y_center + box_height / 2) * height
+        if (
+            not all(math.isfinite(value) for value in (x1, y1, x2, y2))
+            or x1 < 0
+            or y1 < 0
+            or x2 > width
+            or y2 > height
+            or x2 <= x1
+            or y2 <= y1
+        ):
+            raise ValueError(
+                f"Out-of-bounds or degenerate YOLO bbox at {label_path}:{line_number}: "
+                f"{values[1:]} -> ({x1}, {y1}, {x2}, {y2}) for image {width}x{height}"
+            )
+
+        pixel_box = tuple(int(round(value)) for value in (x1, y1, x2, y2))
+        if pixel_box[2] <= pixel_box[0] or pixel_box[3] <= pixel_box[1]:
+            raise ValueError(
+                f"Degenerate YOLO bbox after pixel conversion at {label_path}:{line_number}: "
+                f"{values[1:]} -> {pixel_box}"
+            )
+        boxes[class_id].append(pixel_box)
 
     return boxes
 
@@ -73,16 +87,57 @@ def reconstruction_heatmap(
     model: SonarAutoencoder,
     patch_size: int,
     device: torch.device,
+    batch_size: int = 64,
 ) -> np.ndarray:
     """Return the existing masked, overlap-averaged reconstruction error map."""
+    import numpy as np
+    from src.data.preprocess import preprocess_sonar_image
+
     with Image.open(image_path) as source:
         image = preprocess_sonar_image(source).convert("L")
 
     array = np.asarray(image, dtype=np.float32) / 255.0
+    return batched_reconstruction_heatmap(array, model, patch_size, device, batch_size)
+
+
+def batched_reconstruction_heatmap(
+    array: np.ndarray,
+    model: SonarAutoencoder,
+    patch_size: int,
+    device: torch.device,
+    batch_size: int = 64,
+) -> np.ndarray:
+    """Return the masked overlap-averaged reconstruction error map for an image array.
+
+    Patches retain the evaluator's existing row-major traversal order and are
+    accumulated in that same order after reconstruction-error inference.
+    """
+    import numpy as np
+    import torch
+
+    from src.anomaly.autoencoder import reconstruction_error
+    from src.anomaly.heatmap import mask_sonar_artifacts
+
+    if batch_size < 1:
+        raise ValueError("batch_size must be at least 1")
+
     height, width = array.shape
     stride = patch_size // 2
     heatmap = np.zeros((height, width), dtype=np.float32)
     counts = np.zeros((height, width), dtype=np.float32)
+    patches: list[np.ndarray] = []
+    positions: list[tuple[int, int]] = []
+
+    def accumulate_batch() -> None:
+        if not patches:
+            return
+        tensor = torch.from_numpy(np.stack(patches)).unsqueeze(1).to(device)
+        errors = reconstruction_error(model, tensor).tolist()
+        for (y, x), error in zip(positions, errors, strict=True):
+            heatmap[y:y + patch_size, x:x + patch_size] += error
+            counts[y:y + patch_size, x:x + patch_size] += 1.0
+        patches.clear()
+        positions.clear()
 
     with torch.no_grad():
         for y in range(0, max(1, height - patch_size + 1), stride):
@@ -90,10 +145,11 @@ def reconstruction_heatmap(
                 patch = array[y:y + patch_size, x:x + patch_size]
                 if patch.shape != (patch_size, patch_size):
                     continue
-                tensor = torch.from_numpy(patch).unsqueeze(0).unsqueeze(0).to(device)
-                error = float(reconstruction_error(model, tensor)[0].item())
-                heatmap[y:y + patch_size, x:x + patch_size] += error
-                counts[y:y + patch_size, x:x + patch_size] += 1.0
+                patches.append(patch)
+                positions.append((y, x))
+                if len(patches) == batch_size:
+                    accumulate_batch()
+        accumulate_batch()
 
     valid = counts > 0
     heatmap[valid] /= counts[valid]
@@ -105,8 +161,15 @@ def evaluate_drishti_anomalies(
     labels_dir: Path,
     checkpoint: Path,
     image_threshold: float = DEFAULT_IMAGE_THRESHOLD,
+    batch_size: int = 64,
 ) -> dict:
     """Compare reconstruction errors inside and outside each Drishti class."""
+    import numpy as np
+    import torch
+
+    from src.anomaly.score_reconstruction import load_model, score_image
+    from src.data.preprocess import preprocess_sonar_image
+
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model, patch_size = load_model(checkpoint, device)
     image_paths = sorted(
@@ -119,7 +182,11 @@ def evaluate_drishti_anomalies(
     }
     skipped_images: list[str] = []
 
-    for image_path in image_paths:
+    if batch_size < 1:
+        raise ValueError("batch_size must be at least 1")
+
+    for image_number, image_path in enumerate(image_paths, start=1):
+        print(f"[{image_number}/{len(image_paths)}] {image_path.name}")
         with Image.open(image_path) as source:
             width, height = preprocess_sonar_image(source).size
         if width < patch_size or height < patch_size:
@@ -142,7 +209,13 @@ def evaluate_drishti_anomalies(
             patch_size=patch_size,
             device=device,
         )
-        heatmap = reconstruction_heatmap(image_path, model, patch_size, device)
+        heatmap = reconstruction_heatmap(
+            image_path,
+            model,
+            patch_size,
+            device,
+            batch_size,
+        )
 
         for class_id in present_classes:
             inside_mask = np.zeros_like(heatmap, dtype=bool)
@@ -179,6 +252,10 @@ def evaluate_drishti_anomalies(
         "checkpoint": str(checkpoint),
         "image_threshold": image_threshold,
         "classes": classes,
+        "image_counts_by_unified_class": {
+            str(class_id): classes[name]["image_count"]
+            for class_id, name in CLASS_NAMES.items()
+        },
         "skipped_image_count": len(skipped_images),
         "skipped_images": skipped_images,
     }
@@ -190,6 +267,7 @@ def main() -> None:
     parser.add_argument("--labels-dir", type=Path, default=DEFAULT_LABELS_DIR)
     parser.add_argument("--checkpoint", type=Path, default=DEFAULT_CHECKPOINT)
     parser.add_argument("--image-threshold", type=float, default=DEFAULT_IMAGE_THRESHOLD)
+    parser.add_argument("--batch-size", type=int, default=64)
     args = parser.parse_args()
 
     if not args.images_dir.is_dir() or not args.labels_dir.is_dir():
@@ -204,6 +282,7 @@ def main() -> None:
                 args.labels_dir,
                 args.checkpoint,
                 args.image_threshold,
+                args.batch_size,
             ),
             indent=2,
         )

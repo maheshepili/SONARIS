@@ -1,0 +1,1875 @@
+{
+  "audit": "drishti_sonaris_provenance",
+  "relationships": [
+    {
+      "drishti_image": "images/bg_1693569221.750_x1000.jpg",
+      "provenance": {
+        "crop_x_offset": 1000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569221.750"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569221.750.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569221.750.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569234.750_x2000.jpg",
+      "provenance": {
+        "crop_x_offset": 2000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569234.750"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569234.750.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569234.750.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569250.750_x1500.jpg",
+      "provenance": {
+        "crop_x_offset": 1500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569250.750"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569250.750.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569250.750.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569263.760_x500.jpg",
+      "provenance": {
+        "crop_x_offset": 500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569263.760"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569263.760.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569263.760.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569310.770_x0.jpg",
+      "provenance": {
+        "crop_x_offset": 0,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569310.770"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569310.770.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569310.770.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569312.770_x1500.jpg",
+      "provenance": {
+        "crop_x_offset": 1500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569312.770"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569312.770.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569312.770.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569323.770_x1000.jpg",
+      "provenance": {
+        "crop_x_offset": 1000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569323.770"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569323.770.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569323.770.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569324.770_x3500.jpg",
+      "provenance": {
+        "crop_x_offset": 3500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569324.770"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569324.770.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569324.770.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569324.770_x500.jpg",
+      "provenance": {
+        "crop_x_offset": 500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569324.770"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569324.770.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569324.770.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569332.770_x2500.jpg",
+      "provenance": {
+        "crop_x_offset": 2500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569332.770"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569332.770.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569332.770.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569332.770_x3000.jpg",
+      "provenance": {
+        "crop_x_offset": 3000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569332.770"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569332.770.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569332.770.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569340.770_x1500.jpg",
+      "provenance": {
+        "crop_x_offset": 1500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569340.770"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569340.770.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569340.770.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569340.770_x2500.jpg",
+      "provenance": {
+        "crop_x_offset": 2500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569340.770"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569340.770.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569340.770.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569353.770_x0.jpg",
+      "provenance": {
+        "crop_x_offset": 0,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569353.770"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569353.770.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569353.770.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569360.769_x1000.jpg",
+      "provenance": {
+        "crop_x_offset": 1000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569360.769"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569360.769.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569360.769.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569363.779_x4000.jpg",
+      "provenance": {
+        "crop_x_offset": 4000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569363.779"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569363.779.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569363.779.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569375.779_x1500.jpg",
+      "provenance": {
+        "crop_x_offset": 1500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569375.779"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569375.779.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569375.779.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569397.779_x0.jpg",
+      "provenance": {
+        "crop_x_offset": 0,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569397.779"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569397.779.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569397.779.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569415.790_x2000.jpg",
+      "provenance": {
+        "crop_x_offset": 2000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569415.790"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569415.790.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569415.790.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569422.789_x2500.jpg",
+      "provenance": {
+        "crop_x_offset": 2500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569422.789"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569422.789.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569422.789.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569469.799_x1000.jpg",
+      "provenance": {
+        "crop_x_offset": 1000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569469.799"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569469.799.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569469.799.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569485.800_x0.jpg",
+      "provenance": {
+        "crop_x_offset": 0,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569485.800"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569485.800.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569485.800.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569510.799_x1000.jpg",
+      "provenance": {
+        "crop_x_offset": 1000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569510.799"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569510.799.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569510.799.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569512.810_x1000.jpg",
+      "provenance": {
+        "crop_x_offset": 1000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569512.810"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569512.810.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569512.810.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569545.809_x500.jpg",
+      "provenance": {
+        "crop_x_offset": 500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569545.809"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569545.809.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569545.809.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569561.809_x1000.jpg",
+      "provenance": {
+        "crop_x_offset": 1000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569561.809"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569561.809.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569561.809.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569589.819_x4000.jpg",
+      "provenance": {
+        "crop_x_offset": 4000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569589.819"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569589.819.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569589.819.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569613.829_x0.jpg",
+      "provenance": {
+        "crop_x_offset": 0,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569613.829"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569613.829.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569613.829.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569618.829_x1000.jpg",
+      "provenance": {
+        "crop_x_offset": 1000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569618.829"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569618.829.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569618.829.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569637.830_x2500.jpg",
+      "provenance": {
+        "crop_x_offset": 2500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569637.830"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569637.830.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569637.830.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569639.830_x500.jpg",
+      "provenance": {
+        "crop_x_offset": 500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569639.830"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569639.830.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569639.830.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569664.840_x0.jpg",
+      "provenance": {
+        "crop_x_offset": 0,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569664.840"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569664.840.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569664.840.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569686.840_x2000.jpg",
+      "provenance": {
+        "crop_x_offset": 2000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569686.840"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569686.840.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569686.840.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569694.840_x0.jpg",
+      "provenance": {
+        "crop_x_offset": 0,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569694.840"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569694.840.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569694.840.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569694.840_x1500.jpg",
+      "provenance": {
+        "crop_x_offset": 1500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569694.840"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569694.840.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569694.840.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569697.840_x0.jpg",
+      "provenance": {
+        "crop_x_offset": 0,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569697.840"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569697.840.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569697.840.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569712.849_x4000.jpg",
+      "provenance": {
+        "crop_x_offset": 4000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569712.849"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569712.849.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569712.849.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569721.850_x3000.jpg",
+      "provenance": {
+        "crop_x_offset": 3000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569721.850"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569721.850.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569721.850.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569725.849_x0.jpg",
+      "provenance": {
+        "crop_x_offset": 0,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569725.849"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569725.849.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569725.849.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569725.849_x1500.jpg",
+      "provenance": {
+        "crop_x_offset": 1500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569725.849"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569725.849.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569725.849.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569737.850_x0.jpg",
+      "provenance": {
+        "crop_x_offset": 0,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569737.850"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569737.850.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569737.850.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569737.850_x2500.jpg",
+      "provenance": {
+        "crop_x_offset": 2500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569737.850"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569737.850.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569737.850.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569797.860_x1000.jpg",
+      "provenance": {
+        "crop_x_offset": 1000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569797.860"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569797.860.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569797.860.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569798.860_x1500.jpg",
+      "provenance": {
+        "crop_x_offset": 1500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569798.860"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569798.860.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569798.860.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569798.860_x2000.jpg",
+      "provenance": {
+        "crop_x_offset": 2000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569798.860"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569798.860.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569798.860.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569807.860_x500.jpg",
+      "provenance": {
+        "crop_x_offset": 500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569807.860"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569807.860.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569814.869_x0.jpg",
+      "provenance": {
+        "crop_x_offset": 0,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569814.869"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569814.869.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569814.869.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569831.869_x1500.jpg",
+      "provenance": {
+        "crop_x_offset": 1500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569831.869"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569831.869.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569831.869.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569831.869_x500.jpg",
+      "provenance": {
+        "crop_x_offset": 500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569831.869"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569831.869.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569831.869.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569837.869_x2500.jpg",
+      "provenance": {
+        "crop_x_offset": 2500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569837.869"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569837.869.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569837.869.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569841.870_x4000.jpg",
+      "provenance": {
+        "crop_x_offset": 4000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569841.870"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569841.870.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569841.870.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569893.930_x2000.jpg",
+      "provenance": {
+        "crop_x_offset": 2000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569893.930"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569893.930.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569893.930.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569922.940_x500.jpg",
+      "provenance": {
+        "crop_x_offset": 500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569922.940"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569922.940.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569922.940.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569955.939_x0.jpg",
+      "provenance": {
+        "crop_x_offset": 0,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569955.939"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569955.939.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569955.939.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569955.939_x3000.jpg",
+      "provenance": {
+        "crop_x_offset": 3000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569955.939"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569955.939.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569955.939.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569974.949_x2500.jpg",
+      "provenance": {
+        "crop_x_offset": 2500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569974.949"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569974.949.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569974.949.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569996.950_x1000.jpg",
+      "provenance": {
+        "crop_x_offset": 1000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569996.950"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569996.950.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569996.950.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693569996.950_x3000.jpg",
+      "provenance": {
+        "crop_x_offset": 3000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693569996.950"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693569996.950.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693569996.950.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693570007.950_x2000.jpg",
+      "provenance": {
+        "crop_x_offset": 2000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693570007.950"
+      },
+      "reason": "At least one locally available SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693570007.950.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "train",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693570007.950.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "LEAKAGE_RISK"
+    },
+    {
+      "drishti_image": "images/bg_1693570064.959_x500.jpg",
+      "provenance": {
+        "crop_x_offset": 500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693570064.959"
+      },
+      "reason": "No resolved SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693570064.959.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693570064.959.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "SAFE_EXTERNAL"
+    },
+    {
+      "drishti_image": "images/bg_1693570072.970_x3500.jpg",
+      "provenance": {
+        "crop_x_offset": 3500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693570072.970"
+      },
+      "reason": "No resolved SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693570072.970.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693570072.970.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "SAFE_EXTERNAL"
+    },
+    {
+      "drishti_image": "images/bg_1693570103.969_x2000.jpg",
+      "provenance": {
+        "crop_x_offset": 2000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693570103.969"
+      },
+      "reason": "No resolved SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693570103.969.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693570103.969.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "SAFE_EXTERNAL"
+    },
+    {
+      "drishti_image": "images/bg_1693570103.969_x500.jpg",
+      "provenance": {
+        "crop_x_offset": 500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693570103.969"
+      },
+      "reason": "No resolved SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693570103.969.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693570103.969.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "SAFE_EXTERNAL"
+    },
+    {
+      "drishti_image": "images/bg_1693570128.979_x0.jpg",
+      "provenance": {
+        "crop_x_offset": 0,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693570128.979"
+      },
+      "reason": "No resolved SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693570128.979.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693570128.979.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "SAFE_EXTERNAL"
+    },
+    {
+      "drishti_image": "images/bg_1693570135.979_x1000.jpg",
+      "provenance": {
+        "crop_x_offset": 1000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693570135.979"
+      },
+      "reason": "No resolved SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693570135.979.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693570135.979.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "SAFE_EXTERNAL"
+    },
+    {
+      "drishti_image": "images/bg_1693570135.979_x2000.jpg",
+      "provenance": {
+        "crop_x_offset": 2000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693570135.979"
+      },
+      "reason": "No resolved SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_HF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_HF_images/Image/1693570135.979.pbm"
+        },
+        {
+          "band": "SSS_LF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693570135.979.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "SAFE_EXTERNAL"
+    },
+    {
+      "drishti_image": "images/bg_1693570138.979_x1000.jpg",
+      "provenance": {
+        "crop_x_offset": 1000,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693570138.979"
+      },
+      "reason": "No resolved SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_LF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693570138.979.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "SAFE_EXTERNAL"
+    },
+    {
+      "drishti_image": "images/bg_1693570212.989_x500.jpg",
+      "provenance": {
+        "crop_x_offset": 500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693570212.989"
+      },
+      "reason": "No resolved SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_LF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693570212.989.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "SAFE_EXTERNAL"
+    },
+    {
+      "drishti_image": "images/bg_1693570214.989_x500.jpg",
+      "provenance": {
+        "crop_x_offset": 500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693570214.989"
+      },
+      "reason": "No resolved SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_LF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693570214.989.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "SAFE_EXTERNAL"
+    },
+    {
+      "drishti_image": "images/bg_1693573364.81_x500.jpg",
+      "provenance": {
+        "crop_x_offset": 500,
+        "method": "DRISHTI bg_<SONARIS timestamp>_x<crop offset> filename convention",
+        "referenced_sonaris_timestamp": "1693573364.81"
+      },
+      "reason": "No resolved SONARIS source-frame candidate is in the current training split.",
+      "sonaris_candidates": [
+        {
+          "band": "SSS_LF_images",
+          "current_split": "val",
+          "exact_sha256_match": false,
+          "exists_locally": true,
+          "source_image": "DATA/SSS_LF_images/Image/1693573364.81.pbm"
+        }
+      ],
+      "sonaris_source_exists_locally": true,
+      "status": "SAFE_EXTERNAL"
+    }
+  ],
+  "sources": {
+    "current_sonaris_split": "data\\processed\\sonaris_detection",
+    "drishti_validation": "data\\external\\drishti\\val",
+    "sonaris_raw": "data\\raw\\SubPipeMiniSSS"
+  },
+  "summary": {
+    "drishti_timestamp_referencing_crops": 70,
+    "exact_sha256_candidate_pairs_checked": 135,
+    "exact_sha256_duplicate_pair_count": 0,
+    "exact_sha256_duplicate_pairs": [],
+    "status_counts": {
+      "LEAKAGE_RISK": 59,
+      "SAFE_EXTERNAL": 11
+    }
+  }
+}

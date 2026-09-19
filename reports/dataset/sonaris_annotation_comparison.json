@@ -1,0 +1,353 @@
+{
+  "audit": "sonaris_coco_yolo_annotation_comparison",
+  "bands": [
+    {
+      "band": "SSS_HF_images",
+      "class_mapping": {
+        "coco": {
+          "1": "Pipeline"
+        },
+        "yolo": {
+          "0": "Pipeline"
+        }
+      },
+      "coco_images_missing_yolo": {
+        "count": 337,
+        "examples": [
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569954.939"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569224.750"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569277.759"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569377.780"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569228.750"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569339.770"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569907.929"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569918.940"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569248.750"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569982.950"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569333.770"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569268.760"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569270.760"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569995.950"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569245.750"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569243.750"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693570060.959"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569267.760"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569931.940"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569992.950"
+          }
+        ]
+      },
+      "difference_diagnosis": {
+        "coordinate_conversion_or_serialization": 0,
+        "duplicate_coco_annotations": 0,
+        "duplicate_yolo_annotations": 0,
+        "genuinely_different_annotations": 0,
+        "image_name_mapping": 441
+      },
+      "mismatch_examples": {},
+      "summary": {
+        "coco_boxes": 593,
+        "coco_images": 903,
+        "coco_images_missing_yolo": 337,
+        "coordinate_conversion_boxes": 0,
+        "duplicate_coco_annotations": 0,
+        "duplicate_yolo_annotations": 0,
+        "exact_boxes": 593,
+        "extra_yolo_boxes": 0,
+        "invalid_coco_annotations": 0,
+        "invalid_yolo_lines": 0,
+        "mismatched_boxes": 0,
+        "missing_yolo_boxes": 0,
+        "shared_images": 566,
+        "yolo_boxes": 593,
+        "yolo_label_files": 670,
+        "yolo_labels_missing_coco_image": 104,
+        "yolo_labels_with_coco_image_but_no_annotation": 0
+      },
+      "yolo_labels_missing_coco_image": {
+        "count": 104,
+        "examples": [
+          {
+            "image_stem": "1693569507.799"
+          },
+          {
+            "image_stem": "1693569573.819"
+          },
+          {
+            "image_stem": "1693569601.820"
+          },
+          {
+            "image_stem": "1693569614.829"
+          },
+          {
+            "image_stem": "1693569699.840"
+          },
+          {
+            "image_stem": "1693569708.840"
+          },
+          {
+            "image_stem": "1693569807.860"
+          },
+          {
+            "image_stem": "1693569815.869"
+          },
+          {
+            "image_stem": "1693570075.970"
+          },
+          {
+            "image_stem": "1693570076.970"
+          },
+          {
+            "image_stem": "1693570077.970"
+          },
+          {
+            "image_stem": "1693570078.970"
+          },
+          {
+            "image_stem": "1693570109.969"
+          },
+          {
+            "image_stem": "1693570136.979"
+          },
+          {
+            "image_stem": "1693570137.979"
+          },
+          {
+            "image_stem": "1693570138.979"
+          },
+          {
+            "image_stem": "1693570139.979"
+          },
+          {
+            "image_stem": "1693570140.980"
+          },
+          {
+            "image_stem": "1693570141.980"
+          },
+          {
+            "image_stem": "1693570142.980"
+          }
+        ]
+      },
+      "yolo_labels_with_coco_image_but_no_annotation": {
+        "count": 0,
+        "examples": []
+      }
+    },
+    {
+      "band": "SSS_LF_images",
+      "class_mapping": {
+        "coco": {
+          "1": "Pipeline"
+        },
+        "yolo": {
+          "0": "Pipeline"
+        }
+      },
+      "coco_images_missing_yolo": {
+        "count": 359,
+        "examples": [
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569954.939"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569224.750"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693573353.81"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569219.799"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569277.759"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569228.750"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569339.770"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569907.929"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569918.940"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569248.750"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569982.950"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569333.770"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569268.760"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569329.770"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569270.760"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569995.950"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693573349.809"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569245.750"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693569243.750"
+          },
+          {
+            "coco_annotation_count": 0,
+            "image_stem": "1693570060.959"
+          }
+        ]
+      },
+      "difference_diagnosis": {
+        "coordinate_conversion_or_serialization": 0,
+        "duplicate_coco_annotations": 0,
+        "duplicate_yolo_annotations": 0,
+        "genuinely_different_annotations": 0,
+        "image_name_mapping": 359
+      },
+      "mismatch_examples": {},
+      "summary": {
+        "coco_boxes": 726,
+        "coco_images": 1055,
+        "coco_images_missing_yolo": 359,
+        "coordinate_conversion_boxes": 0,
+        "duplicate_coco_annotations": 0,
+        "duplicate_yolo_annotations": 0,
+        "exact_boxes": 726,
+        "extra_yolo_boxes": 0,
+        "invalid_coco_annotations": 0,
+        "invalid_yolo_lines": 0,
+        "mismatched_boxes": 0,
+        "missing_yolo_boxes": 0,
+        "shared_images": 696,
+        "yolo_boxes": 726,
+        "yolo_label_files": 696,
+        "yolo_labels_missing_coco_image": 0,
+        "yolo_labels_with_coco_image_but_no_annotation": 0
+      },
+      "yolo_labels_missing_coco_image": {
+        "count": 0,
+        "examples": []
+      },
+      "yolo_labels_with_coco_image_but_no_annotation": {
+        "count": 0,
+        "examples": []
+      }
+    }
+  ],
+  "matching": {
+    "coordinate_conversion_iou": 0.99,
+    "exact_coordinate_tolerance": 1e-05,
+    "iou_threshold": 0.5
+  },
+  "overall_summary": {
+    "coco_boxes": 1319,
+    "coco_images": 1958,
+    "coco_images_missing_yolo": 696,
+    "coordinate_conversion_boxes": 0,
+    "duplicate_coco_annotations": 0,
+    "duplicate_yolo_annotations": 0,
+    "exact_boxes": 1319,
+    "extra_yolo_boxes": 0,
+    "invalid_coco_annotations": 0,
+    "invalid_yolo_lines": 0,
+    "mismatched_boxes": 0,
+    "missing_yolo_boxes": 0,
+    "shared_images": 1262,
+    "yolo_boxes": 1319,
+    "yolo_label_files": 1366,
+    "yolo_labels_missing_coco_image": 104,
+    "yolo_labels_with_coco_image_but_no_annotation": 0
+  },
+  "source_root": "data\\raw\\SubPipeMiniSSS\\DATA"
+}

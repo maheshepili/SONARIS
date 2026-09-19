@@ -1,0 +1,326 @@
+[
+  {
+    "Split": "external_validation",
+    "File": "drishti_pipe_1693569415.790_x3000.txt",
+    "Line": 1,
+    "Label": "0 0.796094 0.509000 0.407813 0.982000"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_pipe_1693569415.790_x3500.txt",
+    "Line": 1,
+    "Label": "0 0.282031 0.509000 0.564063 0.982000"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_pipe_1693569479.799_x3500.txt",
+    "Line": 1,
+    "Label": "0 0.188281 0.510000 0.376563 0.980000"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_pipe_1693569553.810_x3500.txt",
+    "Line": 1,
+    "Label": "0 0.219531 0.502000 0.439063 0.996000"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_pipe_1693569615.829_x3500.txt",
+    "Line": 1,
+    "Label": "0 0.282031 0.507000 0.564063 0.986000"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_pipe_1693569618.829_x3500.txt",
+    "Line": 1,
+    "Label": "0 0.297656 0.507000 0.595313 0.986000"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_pipe_1693569637.830_x3500.txt",
+    "Line": 1,
+    "Label": "0 0.279687 0.501000 0.559375 0.998000"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_pipe_1693569659.830_x3500.txt",
+    "Line": 1,
+    "Label": "0 0.235156 0.502000 0.470313 0.996000"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_pipe_1693569671.840_x3000.txt",
+    "Line": 1,
+    "Label": "0 0.789844 0.502000 0.420313 0.996000"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_pipe_1693569686.840_x3500.txt",
+    "Line": 1,
+    "Label": "0 0.295312 0.505000 0.590625 0.990000"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_pipe_1693569739.850_x3500.txt",
+    "Line": 1,
+    "Label": "0 0.389062 0.510000 0.778125 0.980000"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_pipe_1693569813.860_x3500.txt",
+    "Line": 1,
+    "Label": "0 0.707813 0.507000 0.584375 0.986000"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_pipe_1693569859.870_x4000.txt",
+    "Line": 1,
+    "Label": "0 0.228906 0.772000 0.457813 0.456000"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_pipe_1693570120.979_x3500.txt",
+    "Line": 1,
+    "Label": "0 0.264062 0.501000 0.528125 0.998000"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_pipe_1693573373.819_x0.txt",
+    "Line": 1,
+    "Label": "0 0.896094 0.270000 0.207813 0.524000"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_DM_Wilson_10_y320_x1088.txt",
+    "Line": 1,
+    "Label": "1 0.129688 0.842969 0.259375 0.314063"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_DM_Wilson_10_y320_x1088.txt",
+    "Line": 3,
+    "Label": "1 0.657813 0.898438 0.684375 0.203125"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_DM_Wilson_10_y320_x640.txt",
+    "Line": 1,
+    "Label": "1 0.677344 0.842969 0.564063 0.314063"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_DM_Wilson_10_y320_x960.txt",
+    "Line": 1,
+    "Label": "1 0.229687 0.842969 0.459375 0.314063"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_DM_Wilson_10_y320_x960.txt",
+    "Line": 4,
+    "Label": "1 0.757812 0.929688 0.484375 0.140625"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_DM_Wilson_10_y640_x960.txt",
+    "Line": 1,
+    "Label": "1 0.229687 0.375000 0.459375 0.378125"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_DM_Wilson_10_y960_x1088.txt",
+    "Line": 2,
+    "Label": "1 0.572656 0.182031 0.854688 0.364063"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_DM_Wilson_10_y960_x960.txt",
+    "Line": 2,
+    "Label": "1 0.672656 0.182031 0.654687 0.364063"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_EB_Allen_23_y0_x640.txt",
+    "Line": 1,
+    "Label": "1 0.685156 0.883594 0.295312 0.232813"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_EB_Allen_23_y0_x960.txt",
+    "Line": 1,
+    "Label": "1 0.185156 0.883594 0.295312 0.232813"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_EB_Allen_23_y640_x640.txt",
+    "Line": 1,
+    "Label": "1 0.807813 0.467969 0.384375 0.935937"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_Near_Shore_04_y2880_x0.txt",
+    "Line": 2,
+    "Label": "1 0.029687 0.884375 0.059375 0.218750"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_Near_Shore_04_y3200_x0.txt",
+    "Line": 2,
+    "Label": "1 0.029687 0.384375 0.059375 0.218750"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_Near_Shore_05_y5440_x0.txt",
+    "Line": 1,
+    "Label": "1 0.325781 0.735156 0.651563 0.529687"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_Near_Shore_05_y5760_x320.txt",
+    "Line": 1,
+    "Label": "1 0.166406 0.582031 0.332813 0.835938"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_Pewabic_02_y320_x640.txt",
+    "Line": 1,
+    "Label": "1 0.961719 0.826562 0.076563 0.103125"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_Pewabic_02_y640_x640.txt",
+    "Line": 1,
+    "Label": "1 0.961719 0.326562 0.076563 0.103125"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_Pewabic_04_y320_x640.txt",
+    "Line": 1,
+    "Label": "1 0.898438 0.782031 0.203125 0.073438"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_Pewabic_04_y640_x640.txt",
+    "Line": 1,
+    "Label": "1 0.898438 0.282031 0.203125 0.073438"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_04_y1272_x320.txt",
+    "Line": 1,
+    "Label": "1 0.654687 0.051562 0.075000 0.103125"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_04_y1272_x640.txt",
+    "Line": 1,
+    "Label": "1 0.154688 0.051562 0.075000 0.103125"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_04_y320_x1088.txt",
+    "Line": 1,
+    "Label": "1 0.282031 0.886719 0.564063 0.226562"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_04_y320_x320.txt",
+    "Line": 1,
+    "Label": "1 0.967969 0.939063 0.064062 0.121875"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_04_y320_x640.txt",
+    "Line": 1,
+    "Label": "1 0.717969 0.885938 0.564063 0.228125"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_04_y320_x960.txt",
+    "Line": 1,
+    "Label": "1 0.382031 0.885938 0.764062 0.228125"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_04_y640_x1088.txt",
+    "Line": 1,
+    "Label": "1 0.282031 0.420312 0.564063 0.293750"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_04_y960_x0.txt",
+    "Line": 1,
+    "Label": "1 0.685156 0.150781 0.629687 0.301563"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_04_y960_x320.txt",
+    "Line": 1,
+    "Label": "1 0.403125 0.142187 0.806250 0.284375"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_04_y960_x640.txt",
+    "Line": 1,
+    "Label": "1 0.153125 0.085156 0.306250 0.170313"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_10_y1920_x320.txt",
+    "Line": 1,
+    "Label": "1 0.568750 0.580469 0.475000 0.839063"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_10_y2560_x1088.txt",
+    "Line": 1,
+    "Label": "1 0.061719 0.039062 0.123438 0.078125"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_10_y2880_x0.txt",
+    "Line": 1,
+    "Label": "1 0.880469 0.463281 0.239063 0.926562"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_10_y2880_x1088.txt",
+    "Line": 1,
+    "Label": "1 0.039062 0.080469 0.078125 0.160938"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_10_y2880_x640.txt",
+    "Line": 1,
+    "Label": "1 0.135156 0.432812 0.270313 0.865625"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_10_y2880_x640.txt",
+    "Line": 3,
+    "Label": "1 0.720313 0.085156 0.115625 0.170313"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_10_y2880_x960.txt",
+    "Line": 2,
+    "Label": "1 0.220312 0.085156 0.115625 0.170313"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_10_y3200_x0.txt",
+    "Line": 1,
+    "Label": "1 0.880469 0.213281 0.239063 0.426563"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_10_y3200_x320.txt",
+    "Line": 1,
+    "Label": "1 0.507031 0.213281 0.492188 0.426563"
+  },
+  {
+    "Split": "external_validation",
+    "File": "drishti_wreckA_WP_Rend_10_y3200_x640.txt",
+    "Line": 1,
+    "Label": "1 0.126562 0.182812 0.253125 0.365625"
+  }
+]
