@@ -79,6 +79,20 @@ class CandidateRegionTests(unittest.TestCase):
 
         self.assertEqual(regions[0]["bbox"], [26, 26, 8, 8])
 
+    def test_tightening_factor_changes_the_maximum_error_cutoff(self):
+        heatmap = np.zeros((100, 100), dtype=np.float32)
+        heatmap[20:40, 20:40] = 0.004
+        heatmap[26:34, 26:34] = 0.01
+
+        regions = regions_from_heatmap(
+            heatmap,
+            threshold=0.003,
+            min_region_area=10,
+            tightening_factor=0.3,
+        )
+
+        self.assertEqual(regions[0]["bbox"], [20, 20, 20, 20])
+
     def test_tightening_can_be_disabled_for_full_component_bounds(self):
         heatmap = np.zeros((100, 100), dtype=np.float32)
         heatmap[20:40, 20:40] = 0.004

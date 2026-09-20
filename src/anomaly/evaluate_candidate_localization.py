@@ -21,6 +21,7 @@ DEFAULT_IMAGES_DIR = Path("data/external/drishti/val/images")
 DEFAULT_LABELS_DIR = Path("data/external/drishti/val/labels")
 DEFAULT_CHECKPOINT = Path("reports/anomaly/sonar_autoencoder.pt")
 DEFAULT_PATCH_THRESHOLD = 0.0038187976460903883
+DEFAULT_TIGHTENING_FACTOR = 0.60
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png"}
 
 Box = tuple[float, float, float, float]
@@ -86,6 +87,8 @@ def evaluate_candidate_localization(
     labels_dir: Path,
     checkpoint: Path,
     limit: int | None = None,
+    tighten: bool = True,
+    tightening_factor: float = DEFAULT_TIGHTENING_FACTOR,
 ) -> dict:
     """Evaluate class-3 images sequentially to keep memory use bounded."""
     per_image: list[dict] = []
@@ -112,6 +115,8 @@ def evaluate_candidate_localization(
             image_path,
             checkpoint,
             threshold=DEFAULT_PATCH_THRESHOLD,
+            tighten=tighten,
+            tightening_factor=tightening_factor,
         )
         candidates = [
             xywh_to_xyxy(tuple(float(value) for value in region["bbox"]))
@@ -144,6 +149,8 @@ def evaluate_candidate_localization(
     return {
         "class_id": GHOST_NET_CLASS_ID,
         "patch_threshold": DEFAULT_PATCH_THRESHOLD,
+        "tighten": tighten,
+        "tightening_factor": tightening_factor,
         "images_evaluated": len(per_image),
         "ground_truth_boxes": len(best_ious),
         "images_with_at_least_one_candidate": sum(
@@ -165,6 +172,17 @@ def main() -> None:
     parser.add_argument("--labels-dir", type=Path, default=DEFAULT_LABELS_DIR)
     parser.add_argument("--checkpoint", type=Path, default=DEFAULT_CHECKPOINT)
     parser.add_argument("--limit", type=int, help="Maximum class-3 images to evaluate.")
+    parser.add_argument(
+        "--tightening-factor",
+        type=float,
+        default=DEFAULT_TIGHTENING_FACTOR,
+    )
+    parser.add_argument(
+        "--no-tighten",
+        action="store_false",
+        dest="tighten",
+        help="Use full connected-component bounds instead of tightened bounds.",
+    )
     args = parser.parse_args()
     if args.limit is not None and args.limit < 1:
         parser.error("--limit must be at least 1")
@@ -174,7 +192,12 @@ def main() -> None:
         raise SystemExit("SONARIS autoencoder checkpoint does not exist.")
 
     print(json.dumps(evaluate_candidate_localization(
-        args.images_dir, args.labels_dir, args.checkpoint, args.limit,
+        args.images_dir,
+        args.labels_dir,
+        args.checkpoint,
+        args.limit,
+        args.tighten,
+        args.tightening_factor,
     ), indent=2))
 
 

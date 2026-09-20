@@ -12,6 +12,7 @@ import numpy as np
 
 DEFAULT_PATCH_THRESHOLD = 0.0038187976460903883
 DEFAULT_MIN_REGION_AREA = 64
+DEFAULT_TIGHTENING_FACTOR = 0.60
 MAX_EDGE_RESIDUAL_WIDTH_RATIO = 0.003
 MIN_EDGE_RESIDUAL_ASPECT_RATIO = 4
 
@@ -81,7 +82,11 @@ def _is_narrow_edge_residual(bbox: list[int], image_width: int) -> bool:
     )
 
 
-def _tightened_component_bbox(pixels: np.ndarray, heatmap: np.ndarray) -> list[int]:
+def _tightened_component_bbox(
+    pixels: np.ndarray,
+    heatmap: np.ndarray,
+    tightening_factor: float = DEFAULT_TIGHTENING_FACTOR,
+) -> list[int]:
     """Bound the strongest portion of a component, falling back when needed.
 
     The threshold combines the component's upper-quartile error with 75% of
@@ -91,7 +96,10 @@ def _tightened_component_bbox(pixels: np.ndarray, heatmap: np.ndarray) -> list[i
     original_bbox = _component_bbox(pixels)
     ys, xs = pixels[:, 0], pixels[:, 1]
     errors = heatmap[ys, xs]
-    cutoff = max(float(np.percentile(errors, 75)), float(errors.max()) * 0.75)
+    cutoff = max(
+        float(np.percentile(errors, 75)),
+        float(errors.max()) * tightening_factor,
+    )
     strongest_mask = np.zeros_like(heatmap, dtype=bool)
     strongest_mask[ys[errors >= cutoff], xs[errors >= cutoff]] = True
     strongest_components = _connected_components(strongest_mask)
@@ -112,6 +120,7 @@ def regions_from_heatmap(
     threshold: float = DEFAULT_PATCH_THRESHOLD,
     min_region_area: int = DEFAULT_MIN_REGION_AREA,
     tighten: bool = True,
+    tightening_factor: float = DEFAULT_TIGHTENING_FACTOR,
 ) -> list[dict[str, float | int | list[int]]]:
     """Return meaningful thresholded regions with their spatial error statistics.
 
@@ -137,7 +146,7 @@ def regions_from_heatmap(
         ys, xs = pixels[:, 0], pixels[:, 1]
         errors = masked_heatmap[ys, xs]
         bbox = (
-            _tightened_component_bbox(pixels, masked_heatmap)
+            _tightened_component_bbox(pixels, masked_heatmap, tightening_factor)
             if tighten else _component_bbox(pixels)
         )
         if _is_narrow_edge_residual(bbox, heatmap.shape[1]):
@@ -160,12 +169,19 @@ def extract_candidate_regions(
     threshold: float = DEFAULT_PATCH_THRESHOLD,
     min_region_area: int = DEFAULT_MIN_REGION_AREA,
     tighten: bool = True,
+    tightening_factor: float = DEFAULT_TIGHTENING_FACTOR,
 ) -> list[dict[str, float | int | list[int]]]:
     """Generate the masked autoencoder heatmap and extract candidate regions."""
     from src.anomaly.heatmap import anomaly_map
 
     _, heatmap = anomaly_map(image_path, checkpoint, threshold)
-    return regions_from_heatmap(heatmap, threshold, min_region_area, tighten)
+    return regions_from_heatmap(
+        heatmap,
+        threshold,
+        min_region_area,
+        tighten,
+        tightening_factor,
+    )
 
 
 def main() -> None:
