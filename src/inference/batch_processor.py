@@ -36,13 +36,16 @@ def _batch_record(pipeline_result: dict[str, Any], filename: str) -> dict[str, A
     record: dict[str, Any] = {
         "filename": filename,
         "finding": pipeline_result["finding"],
+        "priority": pipeline_result["priority"],
+        "reason": pipeline_result["reason"],
         "requires_expert_verification": pipeline_result["requires_expert_verification"],
+        "evidence": pipeline_result["evidence"],
         "known_object_detection": pipeline_result["known_object_detection"],
         "anomaly_result": anomaly_result,
     }
 
-    # The current integrated pipeline does not produce candidate regions.  Keep
-    # them when a compatible pipeline result makes them available in the future.
+    # Preserve candidate regions at the batch-record level for consumers that
+    # read localization evidence without traversing anomaly_result.
     candidate_regions = pipeline_result.get(
         "candidate_regions", anomaly_result.get("candidate_regions")
     )
