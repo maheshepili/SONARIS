@@ -108,7 +108,7 @@ def score_image(
             max_error > threshold
         )
         result["excess_over_threshold"] = round(
-            max_error - threshold,
+            max(0.0, max_error - threshold),
             8,
         )
 

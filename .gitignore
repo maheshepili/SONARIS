@@ -37,3 +37,12 @@ reports/integrated/
 reports/preprocessing_comparison/
 
 candidate_result.txt
+
+# Local test artifacts
+data/anomaly_test/
+data/test_batch/
+reports/anomaly_test/
+reports/batch_test/
+reports/ghost_conf_050/
+reports/ghost_conf_070/
+reports/pipeline_iou_ground_truth_example.jpg

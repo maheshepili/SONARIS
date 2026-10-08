@@ -4,8 +4,8 @@ import argparse
 import json
 from collections import Counter
 from pathlib import Path
-
 import torch
+from PIL import Image
 
 from src.anomaly.score_reconstruction import load_model, score_image
 from src.models.inference import run_inference
@@ -18,6 +18,25 @@ DEFAULT_ANOMALY_CHECKPOINT = Path(
 DEFAULT_YOLO_WEIGHTS = Path(
     "runs/detect/reports/training/pipeline_yolo11n/weights/best.pt"
 )
+
+
+def discover_images(images_directory: Path) -> list[Path]:
+    return sorted(
+        [
+            *images_directory.glob("*.png"),
+            *images_directory.glob("*.jpg"),
+            *images_directory.glob("*.jpeg"),
+        ]
+    )
+
+
+def is_smaller_than_patch_size(
+    image_path: Path,
+    patch_size: int,
+) -> bool:
+    with Image.open(image_path) as image:
+        width, height = image.size
+    return width < patch_size or height < patch_size
 
 
 def classify_finding(
@@ -97,7 +116,7 @@ def main() -> None:
             f"{args.anomaly_checkpoint}"
         )
 
-    images = sorted(args.images.glob("*.png"))
+    images = discover_images(args.images)
 
     if not images:
         raise SystemExit(
@@ -115,6 +134,30 @@ def main() -> None:
         args.anomaly_checkpoint,
         device,
     )
+
+    skipped_image_paths = [
+        image_path
+        for image_path in images
+        if is_smaller_than_patch_size(
+            image_path,
+            patch_size,
+        )
+    ]
+    images = [
+        image_path
+        for image_path in images
+        if image_path not in skipped_image_paths
+    ]
+    skipped_images = [
+        image_path.name
+        for image_path in skipped_image_paths
+    ]
+
+    for image_name in skipped_images:
+        print(
+            f"Skipping {image_name}: smaller than "
+            f"the {patch_size}x{patch_size} patch size."
+        )
 
     findings = Counter()
     anomaly_count = 0
@@ -187,6 +230,8 @@ def main() -> None:
 
     summary = {
         "images_evaluated": total,
+        "skipped_image_count": len(skipped_images),
+        "skipped_images": skipped_images,
         "threshold_type":
             "IMAGE_LEVEL_MAX_RECONSTRUCTION_ERROR",
         "image_anomaly_threshold":
@@ -197,15 +242,17 @@ def main() -> None:
         "anomaly_flagged_images":
             anomaly_count,
         "anomaly_flagged_fraction":
-            round(anomaly_count / total, 6),
+            round(anomaly_count / total, 6) if total else 0.0,
         "max_reconstruction_error_mean":
             round(
-                sum(max_errors) / len(max_errors),
+                sum(max_errors) / len(max_errors)
+                if max_errors else 0.0,
                 8,
             ),
         "mean_reconstruction_error_mean":
             round(
-                sum(mean_errors) / len(mean_errors),
+                sum(mean_errors) / len(mean_errors)
+                if mean_errors else 0.0,
                 8,
             ),
         "models": {

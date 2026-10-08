@@ -29,6 +29,7 @@ def main() -> None:
     parser.add_argument("--imgsz", type=int)
     parser.add_argument("--batch", type=int)
     parser.add_argument("--device", default=None, help="e.g. 0 for CUDA, cpu for CPU")
+    parser.add_argument("--name", default="pipeline_yolo11n", help="Ultralytics training run name")
     args = parser.parse_args()
     if not args.config.exists():
         raise SystemExit(f"Detector configuration not found: {args.config}")
@@ -46,7 +47,7 @@ def main() -> None:
         "imgsz": args.imgsz or int(config["imgsz"]),
         "batch": args.batch or int(config["batch"]),
         "project": config["project"],
-        "name": "pipeline_yolo11n",
+        "name": args.name,
         "exist_ok": True,
         "seed": int(config["seed"]),
     }
